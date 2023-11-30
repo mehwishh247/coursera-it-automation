@@ -1,0 +1,174 @@
+student-03-841a11c529b5@ws01:~$ sudo systemctl --type=service | grep jimmy
+● jimmytest.service                              loaded failed failed  Jimmy python test s   ervice
+student-03-841a11c529b5@ws01:~$ sudo stop jimmytext.service && sudo disable jimmytest.serv   ice
+sudo: stop: command not found
+student-03-841a11c529b5@ws01:~$ sudo systemctl stop jimmytext.service && sudo systemctl di   sable jimmytest.service
+Failed to stop jimmytext.service: Unit jimmytext.service not loaded.
+student-03-841a11c529b5@ws01:~$ sudo systemctl stop jimmytest && sudo systemctl disable ji   mmytest
+Removed /etc/systemd/system/default.target.wants/jimmytest.service.
+student-03-841a11c529b5@ws01:~$ sudo systemctl status apache2
+× apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Thu 2023-11-30 03:42:16 UTC; 9min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+        CPU: 24ms
+
+Nov 30 03:42:16 ws01 systemd[1]: Starting The Apache HTTP Server...
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: cou>
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: cou>
+Nov 30 03:42:16 ws01 apachectl[2526]: no listening sockets available, shutting down
+Nov 30 03:42:16 ws01 apachectl[2526]: AH00015: Unable to open logs
+Nov 30 03:42:16 ws01 apachectl[2516]: Action 'start' failed.
+Nov 30 03:42:16 ws01 apachectl[2516]: The Apache error log may have more information.
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Control process exited, code=exited, st>
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Failed with result 'exit-code'.
+Nov 30 03:42:16 ws01 systemd[1]: Failed to start The Apache HTTP Server.
+...skipping...
+× apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Thu 2023-11-30 03:42:16 UTC; 9min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+        CPU: 24ms
+
+Nov 30 03:42:16 ws01 systemd[1]: Starting The Apache HTTP Server...
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: cou>
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: cou>
+Nov 30 03:42:16 ws01 apachectl[2526]: no listening sockets available, shutting down
+Nov 30 03:42:16 ws01 apachectl[2526]: AH00015: Unable to open logs
+Nov 30 03:42:16 ws01 apachectl[2516]: Action 'start' failed.
+Nov 30 03:42:16 ws01 apachectl[2516]: The Apache error log may have more information.
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Control process exited, code=exited, st>
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Failed with result 'exit-code'.
+Nov 30 03:42:16 ws01 systemd[1]: Failed to start The Apache HTTP Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+student-03-841a11c529b5@ws01:~$ sudo netstat -nlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Progra   m name
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      358/system   d-resolve
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      777/sshd:    /usr/sbin
+tcp6       0      0 :::22                   :::*                    LISTEN      777/sshd:    /usr/sbin
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           358/system   d-resolve
+udp        0      0 10.128.0.2:68           0.0.0.0:*                           356/system   d-network
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           1277/chron   yd
+udp6       0      0 ::1:323                 :::*                                1277/chron   yd
+raw6       0      0 :::58                   :::*                    7           356/system   d-network
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   PID/Program name     Path
+unix  2      [ ACC ]     STREAM     LISTENING     14514    1/init               /run/syste   md/private
+unix  2      [ ACC ]     STREAM     LISTENING     14516    1/init               /run/syste   md/userdb/io.systemd.DynamicUser
+unix  2      [ ACC ]     STREAM     LISTENING     14517    1/init               /run/syste   md/io.system.ManagedOOM
+unix  2      [ ACC ]     STREAM     LISTENING     546      1/init               /run/lvm/l   vmpolld.socket
+unix  2      [ ACC ]     STREAM     LISTENING     551      1/init               /run/syste   md/fsck.progress
+unix  2      [ ACC ]     STREAM     LISTENING     563      1/init               /run/syste   md/journal/stdout
+unix  2      [ ACC ]     SEQPACKET  LISTENING     566      1/init               /run/udev/   control
+unix  2      [ ACC ]     STREAM     LISTENING     14537    117/systemd-journal  /run/syste   md/journal/io.systemd.journal
+unix  2      [ ACC ]     STREAM     LISTENING     16455    358/systemd-resolve  /run/syste   md/resolve/io.systemd.Resolve
+unix  2      [ ACC ]     STREAM     LISTENING     17491    1/init               /run/dbus/   system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     17499    1/init               /run/snapd   .socket
+unix  2      [ ACC ]     STREAM     LISTENING     17501    1/init               /run/snapd   -snap.socket
+unix  2      [ ACC ]     STREAM     LISTENING     18265    1/init               /var/snap/   lxd/common/lxd/unix.socket
+unix  2      [ ACC ]     STREAM     LISTENING     17503    1/init               /run/uuidd   /request
+unix  2      [ ACC ]     STREAM     LISTENING     18269    1/init               /var/snap/   lxd/common/lxd-user/unix.socket
+unix  2      [ ACC ]     STREAM     LISTENING     548      1/init               @/org/kern   el/linux/storage/multipathd
+unix  2      [ ACC ]     STREAM     LISTENING     17498    1/init               @ISCSIADM_   ABSTRACT_NAMESPACE
+student-03-841a11c529b5@ws01:~$ sudo systemctl status apache2
+× apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Thu 2023-11-30 03:42:16 UTC; 11min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+        CPU: 24ms
+
+Nov 30 03:42:16 ws01 systemd[1]: Starting The Apache HTTP Server...
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: could >
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: could >
+Nov 30 03:42:16 ws01 apachectl[2526]: no listening sockets available, shutting down
+Nov 30 03:42:16 ws01 apachectl[2526]: AH00015: Unable to open logs
+Nov 30 03:42:16 ws01 apachectl[2516]: Action 'start' failed.
+Nov 30 03:42:16 ws01 apachectl[2516]: The Apache error log may have more information.
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Control process exited, code=exited, statu>
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Failed with result 'exit-code'.
+Nov 30 03:42:16 ws01 systemd[1]: Failed to start The Apache HTTP Server.
+...skipping...
+× apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Thu 2023-11-30 03:42:16 UTC; 11min ago
+       Docs: https://httpd.apache.org/docs/2.4/
+        CPU: 24ms
+
+Nov 30 03:42:16 ws01 systemd[1]: Starting The Apache HTTP Server...
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: could >
+Nov 30 03:42:16 ws01 apachectl[2526]: (98)Address already in use: AH00072: make_sock: could >
+Nov 30 03:42:16 ws01 apachectl[2526]: no listening sockets available, shutting down
+Nov 30 03:42:16 ws01 apachectl[2526]: AH00015: Unable to open logs
+Nov 30 03:42:16 ws01 apachectl[2516]: Action 'start' failed.
+Nov 30 03:42:16 ws01 apachectl[2516]: The Apache error log may have more information.
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Control process exited, code=exited, statu>
+Nov 30 03:42:16 ws01 systemd[1]: apache2.service: Failed with result 'exit-code'.
+Nov 30 03:42:16 ws01 systemd[1]: Failed to start The Apache HTTP Server.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+
+student-03-841a11c529b5@ws01:~$ sudo systemctl start apache2
+student-03-841a11c529b5@ws01:~$
